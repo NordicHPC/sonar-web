@@ -43,6 +43,15 @@ d3.csv("https://raw.githubusercontent.com/bast/sonar-web/gh-pages/example-data/s
         .attr("class", "axis axis--y")
         .call(yAxis);
 
+    // text label for the y axis
+    focus.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("CPU load percentage");
+
     var columns = Object.keys(data[0]).slice(1);
     var colors = ["green", "red", "steelblue", "orange", "blue", "black", "gray", "brown", "crimson", "pink"];
 
