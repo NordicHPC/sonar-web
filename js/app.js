@@ -25,7 +25,7 @@ var focus = svg.append("g")
     .attr("class", "focus")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("https://raw.githubusercontent.com/bast/sonar-web/4e0ecb2d4e563dac178d2ac2cf8c28d324dc6cbf/example-data/stallo.csv", type, function(error, data) {
+d3.csv("https://raw.githubusercontent.com/nordichpc/sonar-web/e0c1bb05a009b0e5dbde015e1585b29da0a349b8/example-data/stallo.csv", type, function(error, data) {
 
     if (error) throw error;
 
