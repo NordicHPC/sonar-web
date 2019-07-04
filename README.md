@@ -2,7 +2,7 @@
 
 # sonar-web
 
-Plots daily (later also weekly and monthly) CPU usage summary on clusters.
+Plots daily/weekly/monthly CPU usage summary for clusters.
 
 - Status: work in progress and pre-alpha
 - Example plot: https://nordichpc.github.io/sonar-web/
