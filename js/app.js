@@ -32,7 +32,7 @@ d3.csv("https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a84
     x.domain(d3.extent(data, function(d) {
         return d.date;
     }));
-    y.domain([0, 50]);
+    y.domain([0, 60]);
 
     focus.append("g")
         .attr("class", "axis axis--x")
@@ -47,7 +47,7 @@ d3.csv("https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a84
     focus.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0 - margin.left)
-        .attr("x",0 - (height / 2))
+        .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("CPU load percentage");
