@@ -1,19 +1,20 @@
-var svg = d3.select("svg"),
-    margin = {
-        top: 20,
-        right: 100,
-        bottom: 110,
-        left: 40
-    },
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom;
+var svg = d3.select("svg");
 
+var margin = {
+    top: 20,
+    right: 100,
+    bottom: 110,
+    left: 40
+};
 
-var x = d3.scaleTime().range([0, width]),
-    y = d3.scaleLinear().range([height, 0]);
+var width = +svg.attr("width") - margin.left - margin.right;
+var height = +svg.attr("height") - margin.top - margin.bottom;
 
-var xAxis = d3.axisBottom(x),
-    yAxis = d3.axisLeft(y);
+var x = d3.scaleTime().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+var xAxis = d3.axisBottom(x);
+var yAxis = d3.axisLeft(y);
 
 svg.append("defs").append("clipPath")
     .attr("id", "clip")
