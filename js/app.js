@@ -1,10 +1,4 @@
-function type(d) {
-    let _parse_date = d3.timeParse("%Y-%m-%d");
-    d.date = _parse_date(d.date);
-    return d;
-}
-
-function add_plot(id, url) {
+function add_plot(id, date_period, type_parse, url) {
 
     var svg = d3.select(id);
 
@@ -34,12 +28,12 @@ function add_plot(id, url) {
         .attr("class", "focus")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv(url, type, function(error, data) {
+    d3.csv(url, type_parse, function(error, data) {
 
         if (error) throw error;
 
         x.domain(d3.extent(data, function(d) {
-            return d.date;
+            return d[date_period];
         }));
         y.domain([0, 60]);
 
@@ -70,7 +64,7 @@ function add_plot(id, url) {
             let _line = d3.line()
                 .curve(d3.curveMonotoneX)
                 .x(function(d) {
-                    return x(d.date);
+                    return x(d[date_period]);
                 })
                 .y(function(d) {
                     return y(d[column]);
@@ -92,4 +86,29 @@ function add_plot(id, url) {
     });
 }
 
-add_plot("#stallo-daily", "https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a843771226b248ce40e8641ef/example-data/stallo-daily.csv");
+
+function date_parse(d) {
+    let _parse = d3.timeParse("%Y-%m-%d");
+    d.date = _parse(d.date);
+    return d;
+}
+
+add_plot("#stallo-daily", "date", date_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a843771226b248ce40e8641ef/example-data/stallo-daily.csv");
+
+
+function week_parse(d) {
+    let _parse = d3.timeParse("%Y-%V");
+    d.week = _parse(d.week);
+    return d;
+}
+
+add_plot("#stallo-weekly", "week", week_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a843771226b248ce40e8641ef/example-data/stallo-weekly.csv");
+
+
+function month_parse(d) {
+    let _parse = d3.timeParse("%Y-%m");
+    d.month = _parse(d.month);
+    return d;
+}
+
+add_plot("#stallo-monthly", "month", month_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/ea1e2d69b74cde4a843771226b248ce40e8641ef/example-data/stallo-monthly.csv");
