@@ -93,7 +93,7 @@ function date_parse(d) {
     return d;
 }
 
-add_plot("#stallo-daily", "date", date_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/06907d6ed20e9a64a95baf9770b02e46cb223d3b/example-data/stallo-daily.csv");
+add_plot("#stallo-daily", "date", date_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/7e22886a77ee2f6bdef60b30b80c08c877f56cbd/example-data/stallo-daily.csv");
 
 
 function week_parse(d) {
@@ -102,7 +102,7 @@ function week_parse(d) {
     return d;
 }
 
-add_plot("#stallo-weekly", "week", week_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/06907d6ed20e9a64a95baf9770b02e46cb223d3b/example-data/stallo-weekly.csv");
+add_plot("#stallo-weekly", "week", week_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/7e22886a77ee2f6bdef60b30b80c08c877f56cbd/example-data/stallo-weekly.csv");
 
 
 function month_parse(d) {
@@ -111,4 +111,4 @@ function month_parse(d) {
     return d;
 }
 
-add_plot("#stallo-monthly", "month", month_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/06907d6ed20e9a64a95baf9770b02e46cb223d3b/example-data/stallo-monthly.csv");
+add_plot("#stallo-monthly", "month", month_parse, "https://raw.githubusercontent.com/nordichpc/sonar-web/7e22886a77ee2f6bdef60b30b80c08c877f56cbd/example-data/stallo-monthly.csv");
